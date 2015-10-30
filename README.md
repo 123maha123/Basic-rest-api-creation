@@ -1,0 +1,1 @@
+This is a basic example where one could either get details of a charity or get details of all charities via an api using spring boot 

@@ -13,7 +13,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+package maha.sample.testSample;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
+@RequestMapping("/sample")
 public class CharityController {
 
     @RequestMapping("/charity")
@@ -34,8 +47,8 @@ public class CharityController {
         return charity;
     }
 
-    @RequestMapping(value = "/charity/details", method = RequestMethod.GET)
-    public CharityPojo getCharityDetails( @RequestParam(value = "name") String name ) {
+    @RequestMapping(value = "/charity/{name}", method = RequestMethod.GET)
+    public CharityPojo getCharityDetails( @PathVariable(value = "name") String name ) {
         List<WishlistPojo> wishlist1 = new ArrayList<WishlistPojo>();
         List<WishlistPojo> wishlist2 = new ArrayList<WishlistPojo>();
         List<WishlistPojo> wishlist3 = new ArrayList<WishlistPojo>();
